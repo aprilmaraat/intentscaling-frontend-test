@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
-  standalone: true,
+  standalone: false,
   imports: [
     CommonModule,
     RouterModule,
