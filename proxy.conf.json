@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://ipgroupapi-akepbgdpacevf8gv.australiaeast-01.azurewebsites.net",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
