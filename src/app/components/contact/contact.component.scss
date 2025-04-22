@@ -1,0 +1,40 @@
+.app-header {
+  position: relative;
+  height: auto;
+  padding: 0;
+  background: #fff;
+  padding-top: 100px;
+  padding-bottom: 125px;
+}
+
+.ant-layout-header {
+  background: #fff;
+  width: 100%;
+  padding: 0;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+h3 {
+  color: #FF3262;
+  font-weight: 500;
+}
+
+.content {
+  margin-top: 150px;
+  height: calc(100% - 220px);
+}
+
+.ant-input-affix-wrapper {
+  border-radius: 50px;
+}
+
+.nz-col {
+  border: 1px solid black;
+}
+
+.filter-icon, .control-icon {
+  font-size: 24px;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Property } from 'src/app/models/property';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -7,11 +8,18 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./properties.component.scss']
 })
 export class PropertiesComponent implements OnInit {
-  properties: any[] = [];
+  properties: Property[] = [];
+  ownedProperties: Property[] = [];
+  rejectedProperties: Property[] = [];
 
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.api.getProperties().subscribe(data => this.properties = data.data || []);
+    this.api.getProperties().subscribe((data) => {
+      this.properties = data.items.$values
+      this.ownedProperties = this.properties.filter(x => x.propertyPrice <= 0);
+      this.rejectedProperties = this.properties.filter(x => x.propertyPrice <= 0);
+      console.log('Data', this.properties);
+    });
   }
 }

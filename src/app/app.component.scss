@@ -9,11 +9,15 @@
   height: 100vh;
 }
 
+.ant-layout-sider {
+  background: #225068;
+}
+
 .menu-sidebar {
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  box-shadow: 2px 0 6px rgba(0,21,41,.35);
+  box-shadow: 3px 0 12px #225068;
 }
 
 .header-trigger {
@@ -37,7 +41,7 @@
   padding-left: 24px;
   overflow: hidden;
   line-height: 64px;
-  background: #001529;
+  background: #225068;
   transition: all .3s;
 }
 
@@ -66,18 +70,53 @@ nz-header {
 
 .app-header {
   position: relative;
-  height: 64px;
+  // height: 64px;
+  height: auto;
   padding: 0;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  // box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  padding-top: 125px;
+  padding-bottom: 125px;
+  height: auto;
 }
 
-nz-content {
-  margin: 24px;
-}
+// nz-content {
+//   margin: 24px;
+// }
 
 .inner-content {
-  padding: 24px;
+  // margin-top: 220px;
+  padding-left: 40px;
+  padding-right: 40px;
+  // background: #fff;
+  // height: calc(100% - 220px);
+  // border: 1px solid black;
+}
+
+.ant-layout-content {
   background: #fff;
-  height: 100%;
+}
+
+nz-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: none;
+  color: #fff;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.label {
+  font-size: 20px;
+}
+
+.icon, .label {
+  color: #FF3262;
+}
+
+.ant-menu, .ant-menu-item {
+  background: #225068;
 }

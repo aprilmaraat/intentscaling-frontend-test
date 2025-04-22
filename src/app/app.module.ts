@@ -16,6 +16,16 @@ import { FormsModule } from '@angular/forms';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 registerLocaleData(en);
 
@@ -34,7 +44,17 @@ registerLocaleData(en);
     FormsModule,
     IconsProviderModule,
     NzLayoutModule,
-    NzMenuModule
+    NzMenuModule,
+    NzTableModule,
+    NzCheckboxModule,
+    NzButtonModule,
+    NzPageHeaderModule,
+    NzGridModule,
+    NzInputModule,
+    NzIconModule,
+    NzBadgeModule,
+    NzTabsModule,
+    NzCardModule
   ],
   providers: [ApiService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

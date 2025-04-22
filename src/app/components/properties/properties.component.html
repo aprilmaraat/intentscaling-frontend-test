@@ -1,16 +1,67 @@
-<!-- <mat-tab-group>
-  <mat-tab label="Properties I Own">
-    <div *ngFor="let prop of properties" class="property-card">
-      <img src="/assets/sample-property.jpg" alt="Property" width="100%">
-      <h4>{{ prop.propertyName }}</h4>
-      <p>{{ prop.address }}</p>
+<nz-header>
+  <div class="app-header">
+    <div nz-row>
+      <div nz-col nzSpan="12">
+        <h1 nz-typography>Properties</h1>
+      </div>
+      <div nz-col nzSpan="12"></div>
     </div>
-  </mat-tab>
-  <mat-tab label="Recommended">
-    <div *ngFor="let prop of properties" class="property-card">
-      <img src="/assets/sample-property.jpg" alt="Property" width="100%">
-      <h4>{{ prop.propertyName }}</h4>
-      <p>{{ prop.address }}</p>
+    <div nz-row>
+      <div nz-col nzSpan="12">
+        <h3 nz-typography>Here is your summary</h3>
+      </div>
+      <div nz-col nzSpan="12">
+        <div nz-row>
+          <div nz-col nzSpan="4"></div>
+          <div nz-col nzSpan="20">
+            <nz-input-group [nzPrefix]="prefixTemplateSearch">
+              <input type="text" nz-input placeholder="Search" />
+            </nz-input-group>
+          </div>
+        </div>
+        <ng-template #prefixTemplateSearch><span nz-icon nzType="search"></span></ng-template>
+      </div>
     </div>
-  </mat-tab>
-</mat-tab-group> -->
+  </div>
+</nz-header>
+<nz-tabset class="content" [nzSize]="'large'" nzCentered>
+  <nz-tab nzTitle="Properties I Own">
+    <div nz-row [nzGutter]="8">
+      <ng-template ngFor let-data [ngForOf]="ownedProperties" let-x="index">
+        {{ data.titleReference }}
+        <nz-card style="width:300px;">
+          <img class="image" alt="example" [src]="'../../../assets/img_' + (x+1) + '.png'" />
+          <span>{{ data.titleReference }} WOW</span>
+          <p>Card content</p>
+        </nz-card>
+        <!-- <nz-card style="width:300px;" [nzCover]="coverTemplate">
+          <nz-card-meta
+            nzTitle="titleTemplate"
+            nzDescription="descriptionTemplate"
+          ></nz-card-meta>
+          <p>{{ data.propertyAddress }}</p>
+        </nz-card>
+        <ng-template #titleTemplate>
+          <span>{{ data.titleReference }}</span>
+        </ng-template>
+        <ng-template #descriptionTemplate>
+          <span>{{ data.propertyAddress }}</span>
+        </ng-template>
+        <ng-template #coverTemplate>
+          <img alt="example" [src]="'../../../assets/img_' + (x+1) + '.png'" />
+        </ng-template>
+        <ng-template #actionSetting>
+          <span nz-icon nzType="setting" nzTheme="outline"></span>
+        </ng-template>
+        <ng-template #actionEdit>
+          <span nz-icon nzType="edit" nzTheme="outline"></span>
+        </ng-template>
+        <ng-template #actionEllipsis>
+          <span nz-icon nzType="ellipsis" nzTheme="outline"></span>
+        </ng-template> -->
+      </ng-template>
+    </div>
+  </nz-tab>
+  <nz-tab nzTitle="Recommended Properties">Content of Tab Pane 2</nz-tab>
+  <nz-tab nzTitle="Rejected Properties">Content of Tab Pane 3</nz-tab>
+</nz-tabset>
