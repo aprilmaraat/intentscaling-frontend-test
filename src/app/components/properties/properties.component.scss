@@ -16,40 +16,9 @@ ul.ant-card-actions > li.ng-star-inserted:not(:first-child) {
   width: 10% !important;
 }
 
-// .featured-tag {
-//   width: 80px;
-//   height: 25px;
-//   line-height: 25px;
-//   z-index: 2;
-//   position: absolute;
-//   padding-right: 5px;
-//   padding-left: 5px;
-//   margin: 0;
-//   top: 5px;
-//   bottom: 5px;
-//   right: 5px;
-//   left: 5px;
-//   text-align: center;
-// }
-
-// .delete-button {
-//   position: absolute;
-//   margin: 0;
-//   top: 5px;
-//   bottom: 5px;
-//   right: 5px;
-//   left: 260px;
-//   text-align: center;
-//   width: 30px;
-//   height: 30px;
-//   line-height: 25px;
-//   z-index: 2;
-// }
-
 .tab-content {
   border: 1px solid black;
   height: 640px !important;
-  // overflow-y: auto;
 }
 
 .card-grid {
@@ -60,10 +29,8 @@ ul.ant-card-actions > li.ng-star-inserted:not(:first-child) {
 }
 
 .card-item {
-  // flex: 1 1 calc(33.333% - 16px); // 3 per row with spacing
   flex: 1;
   max-width: 300px;
-  // box-sizing: border-box;
 }
 
 @media (max-width: 900px) {
