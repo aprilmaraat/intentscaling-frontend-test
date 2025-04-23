@@ -11,6 +11,7 @@ export class PropertiesComponent implements OnInit {
   properties: Property[] = [];
   ownedProperties: Property[] = [];
   rejectedProperties: Property[] = [];
+  searchText: string = '';
 
   constructor(private api: ApiService) {}
 
@@ -21,5 +22,9 @@ export class PropertiesComponent implements OnInit {
       this.rejectedProperties = this.properties.filter(x => x.propertyPrice <= 0);
       console.log('Data', this.properties);
     });
+  }
+
+  filterProperties() {
+
   }
 }

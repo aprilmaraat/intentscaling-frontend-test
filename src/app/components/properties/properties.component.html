@@ -26,14 +26,15 @@
 </nz-header>
 <nz-tabset class="content" [nzSize]="'large'" nzCentered>
   <nz-tab nzTitle="Properties I Own">
+    <!-- Possible for generic view but for times sake this will do. -->
     <div class="card-grid">
-      <ng-template ngFor let-data [ngForOf]="properties" let-x="index">
+      <ng-template ngFor let-data [ngForOf]="ownedProperties" let-x="index">
             <nz-card class="card-item card-wrapper" style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionDescription, actionShare, actionFavorite]">
               <nz-card-meta
                 [nzTitle]="titleTemplate"
                 [nzDescription]="descriptionTemplate"
               ></nz-card-meta>
-              <nz-tag class="featured-tag" nzColor="#FF3262">
+              <nz-tag *ngIf="data.propertyPrice > 0" class="featured-tag" nzColor="#FF3262">
                 <span>Featured</span>
               </nz-tag>
               <button class="delete-button top-right-button" nz-button nzType="default" nzSize="small">
@@ -62,6 +63,7 @@
     </div>
   </nz-tab>
   <nz-tab nzTitle="Recommended Properties">
+    <!-- Possible for generic view but for times sake this will do. -->
     <div class="card-grid">
       <ng-template ngFor let-data [ngForOf]="properties" let-x="index">
             <nz-card class="card-item card-wrapper" style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionDescription, actionShare, actionFavorite]">
@@ -69,7 +71,7 @@
                 [nzTitle]="titleTemplate"
                 [nzDescription]="descriptionTemplate"
               ></nz-card-meta>
-              <nz-tag class="featured-tag" nzColor="#FF3262">
+              <nz-tag *ngIf="data.propertyPrice > 0" class="featured-tag" nzColor="#FF3262">
                 <span>Featured</span>
               </nz-tag>
               <button class="delete-button top-right-button" nz-button nzType="default" nzSize="small">
@@ -98,14 +100,15 @@
     </div>
   </nz-tab>
   <nz-tab nzTitle="Rejected Properties">
+    <!-- Possible for generic view but for times sake this will do. -->
     <div class="card-grid">
-      <ng-template ngFor let-data [ngForOf]="properties" let-x="index">
+      <ng-template ngFor let-data [ngForOf]="rejectedProperties" let-x="index">
             <nz-card class="card-item card-wrapper" style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionDescription, actionShare, actionFavorite]">
               <nz-card-meta
                 [nzTitle]="titleTemplate"
                 [nzDescription]="descriptionTemplate"
               ></nz-card-meta>
-              <nz-tag class="featured-tag" nzColor="#FF3262">
+              <nz-tag *ngIf="data.propertyPrice > 0" class="featured-tag" nzColor="#FF3262">
                 <span>Featured</span>
               </nz-tag>
               <button class="delete-button top-right-button" nz-button nzType="default" nzSize="small">
