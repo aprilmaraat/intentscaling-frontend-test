@@ -14,6 +14,7 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { IconsProviderModule } from './icons-provider.module';
+import { CapitalizeWordsPipe } from './shared/pipes/capitalize-words.pipe';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -26,6 +27,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 registerLocaleData(en);
 
@@ -33,7 +35,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     ContactsComponent,
-    PropertiesComponent
+    PropertiesComponent,
+    CapitalizeWordsPipe
   ],
   imports: [
     CommonModule,
@@ -54,8 +57,10 @@ registerLocaleData(en);
     NzIconModule,
     NzBadgeModule,
     NzTabsModule,
-    NzCardModule
+    NzCardModule,
+    NzTagModule
   ],
+  exports: [CapitalizeWordsPipe],
   providers: [ApiService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })

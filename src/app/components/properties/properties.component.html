@@ -26,42 +26,111 @@
 </nz-header>
 <nz-tabset class="content" [nzSize]="'large'" nzCentered>
   <nz-tab nzTitle="Properties I Own">
-    <div nz-row [nzGutter]="8">
-      <ng-template ngFor let-data [ngForOf]="ownedProperties" let-x="index">
-        {{ data.titleReference }}
-        <nz-card style="width:300px;">
-          <img class="image" alt="example" [src]="'../../../assets/img_' + (x+1) + '.png'" />
-          <span>{{ data.titleReference }} WOW</span>
-          <p>Card content</p>
-        </nz-card>
-        <!-- <nz-card style="width:300px;" [nzCover]="coverTemplate">
-          <nz-card-meta
-            nzTitle="titleTemplate"
-            nzDescription="descriptionTemplate"
-          ></nz-card-meta>
-          <p>{{ data.propertyAddress }}</p>
-        </nz-card>
+    <div class="card-grid">
+      <ng-template ngFor let-data [ngForOf]="properties" let-x="index">
+            <nz-card class="card-item card-wrapper" style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionDescription, actionShare, actionFavorite]">
+              <nz-card-meta
+                [nzTitle]="titleTemplate"
+                [nzDescription]="descriptionTemplate"
+              ></nz-card-meta>
+              <nz-tag class="featured-tag" nzColor="#FF3262">
+                <span>Featured</span>
+              </nz-tag>
+              <button class="delete-button top-right-button" nz-button nzType="default" nzSize="small">
+                <span nz-icon nzType="delete" nzTheme="outline"></span>
+              </button>
+            </nz-card>
         <ng-template #titleTemplate>
-          <span>{{ data.titleReference }}</span>
+          <span class="title">{{ '# '+ data.titleReference }}</span>
         </ng-template>
         <ng-template #descriptionTemplate>
-          <span>{{ data.propertyAddress }}</span>
+          <span class="description">{{ data.propertyAddress || 'N/A' }}</span>
         </ng-template>
         <ng-template #coverTemplate>
           <img alt="example" [src]="'../../../assets/img_' + (x+1) + '.png'" />
         </ng-template>
-        <ng-template #actionSetting>
-          <span nz-icon nzType="setting" nzTheme="outline"></span>
+        <ng-template #actionDescription>
+          <span>{{ data.propertyCriteria }}</span>
         </ng-template>
-        <ng-template #actionEdit>
-          <span nz-icon nzType="edit" nzTheme="outline"></span>
+        <ng-template #actionShare>
+          <span nz-icon nzType="form" nzTheme="outline"></span>
         </ng-template>
-        <ng-template #actionEllipsis>
-          <span nz-icon nzType="ellipsis" nzTheme="outline"></span>
-        </ng-template> -->
+        <ng-template #actionFavorite>
+          <span nz-icon nzType="heart" nzTheme="fill"></span>
+        </ng-template>
       </ng-template>
     </div>
   </nz-tab>
-  <nz-tab nzTitle="Recommended Properties">Content of Tab Pane 2</nz-tab>
-  <nz-tab nzTitle="Rejected Properties">Content of Tab Pane 3</nz-tab>
+  <nz-tab nzTitle="Recommended Properties">
+    <div class="card-grid">
+      <ng-template ngFor let-data [ngForOf]="properties" let-x="index">
+            <nz-card class="card-item card-wrapper" style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionDescription, actionShare, actionFavorite]">
+              <nz-card-meta
+                [nzTitle]="titleTemplate"
+                [nzDescription]="descriptionTemplate"
+              ></nz-card-meta>
+              <nz-tag class="featured-tag" nzColor="#FF3262">
+                <span>Featured</span>
+              </nz-tag>
+              <button class="delete-button top-right-button" nz-button nzType="default" nzSize="small">
+                <span nz-icon nzType="delete" nzTheme="outline"></span>
+              </button>
+            </nz-card>
+        <ng-template #titleTemplate>
+          <span class="title">{{ '# '+ data.titleReference }}</span>
+        </ng-template>
+        <ng-template #descriptionTemplate>
+          <span class="description">{{ data.propertyAddress || 'N/A' }}</span>
+        </ng-template>
+        <ng-template #coverTemplate>
+          <img alt="example" [src]="'../../../assets/img_' + (x+1) + '.png'" />
+        </ng-template>
+        <ng-template #actionDescription>
+          <span>{{ data.propertyCriteria }}</span>
+        </ng-template>
+        <ng-template #actionShare>
+          <span nz-icon nzType="form" nzTheme="outline"></span>
+        </ng-template>
+        <ng-template #actionFavorite>
+          <span nz-icon nzType="heart" nzTheme="fill"></span>
+        </ng-template>
+      </ng-template>
+    </div>
+  </nz-tab>
+  <nz-tab nzTitle="Rejected Properties">
+    <div class="card-grid">
+      <ng-template ngFor let-data [ngForOf]="properties" let-x="index">
+            <nz-card class="card-item card-wrapper" style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionDescription, actionShare, actionFavorite]">
+              <nz-card-meta
+                [nzTitle]="titleTemplate"
+                [nzDescription]="descriptionTemplate"
+              ></nz-card-meta>
+              <nz-tag class="featured-tag" nzColor="#FF3262">
+                <span>Featured</span>
+              </nz-tag>
+              <button class="delete-button top-right-button" nz-button nzType="default" nzSize="small">
+                <span nz-icon nzType="delete" nzTheme="outline"></span>
+              </button>
+            </nz-card>
+        <ng-template #titleTemplate>
+          <span class="title">{{ '# '+ data.titleReference }}</span>
+        </ng-template>
+        <ng-template #descriptionTemplate>
+          <span class="description">{{ data.propertyAddress || 'N/A' }}</span>
+        </ng-template>
+        <ng-template #coverTemplate>
+          <img alt="example" [src]="'../../../assets/img_' + (x+1) + '.png'" />
+        </ng-template>
+        <ng-template #actionDescription>
+          <span>{{ data.propertyCriteria }}</span>
+        </ng-template>
+        <ng-template #actionShare>
+          <span nz-icon nzType="form" nzTheme="outline"></span>
+        </ng-template>
+        <ng-template #actionFavorite>
+          <span nz-icon nzType="heart" nzTheme="fill"></span>
+        </ng-template>
+      </ng-template>
+    </div>
+  </nz-tab>
 </nz-tabset>

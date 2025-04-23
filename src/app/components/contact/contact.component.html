@@ -24,7 +24,7 @@
           </div>
           <div nz-col nzSpan="20">
             <nz-input-group [nzPrefix]="prefixTemplateSearch">
-              <input type="text" nz-input placeholder="Search" />
+              <input [(ngModel)]="searchText" type="text" nz-input placeholder="Search" (keyup)="filterContacts()"/>
             </nz-input-group>
           </div>
         </div>
@@ -33,7 +33,7 @@
     </div>
   </div>
 </nz-header>
-<nz-table #basicTable class="content" [nzData]="contacts" [nzPageSize]="8">
+<nz-table #basicTable class="content" [nzData]="filteredContacts" [nzPageSize]="8">
   <thead>
     <tr>
       <th>ID</th>
@@ -50,10 +50,10 @@
     <ng-template ngFor let-data [ngForOf]="basicTable.data" let-x="index">
       <tr>
         <td>{{ data.contactId }}</td>
-        <td>{{ data.firstName }} {{ data.lastName }}</td>
+        <td>{{ data.firstName | capitalizeWords }} {{ data.lastName | capitalizeWords }}</td>
         <td>{{ data.email }}</td>
         <td>{{ data.phone }}</td>
-        <td>{{ data.type }}</td>
+        <td>{{ data.type | capitalizeWords }}</td>
         <td>
           <label nz-checkbox [(ngModel)]="data.access.portalAccess"></label>
         </td>

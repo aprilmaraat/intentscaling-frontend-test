@@ -36,7 +36,6 @@
   position: relative;
   padding-top: 125px;
   padding-bottom: 125px;
-  // height: 64px;
   height: auto;
   padding-left: 24px;
   overflow: hidden;
@@ -70,27 +69,19 @@ nz-header {
 
 .app-header {
   position: relative;
-  // height: 64px;
   height: auto;
   padding: 0;
   background: #fff;
-  // box-shadow: 0 1px 4px rgba(0,21,41,.08);
   padding-top: 125px;
   padding-bottom: 125px;
   height: auto;
 }
 
-// nz-content {
-//   margin: 24px;
-// }
-
 .inner-content {
-  // margin-top: 220px;
   padding-left: 40px;
   padding-right: 40px;
-  // background: #fff;
-  // height: calc(100% - 220px);
-  // border: 1px solid black;
+  min-height: 100vh;
+  height: 100vh;
 }
 
 .ant-layout-content {
